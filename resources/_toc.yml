@@ -1,0 +1,13 @@
+format: jb-book
+root: index
+parts:
+  - caption: Overview
+    chapters:
+    - file: overview/intro
+  - caption: JupyterGIS Tutorials and Tips
+    chapters:
+    - file: tutorials/intro
+  - caption: Case studies
+    chapters:
+    - file: case-studies/gallery
+    - file: case-studies/contribute
