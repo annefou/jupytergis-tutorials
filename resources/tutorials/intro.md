@@ -10,3 +10,15 @@ By the end of this tutorial, you will:
 2. Set up the required tools and libraries.
 3. Create a simple map and add layers.
 4. Explore basic geospatial analysis using JupyterGIS.
+
+
+## Introduction to JupyterGIS
+
+JupyterGIS integrates geospatial analysis with the interactivity of Jupyter Notebooks, making it easy to:
+
+- Visualize and create interactive maps.
+- Process and analyze geospatial data.
+- Share and collaborate on geospatial workflows.
+
+This tool is ideal for researchers, data scientists, and GIS professionals aiming to combine Python’s analytical power with intuitive geospatial visualizations.
+
