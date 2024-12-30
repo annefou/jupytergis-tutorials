@@ -20,5 +20,17 @@ JupyterGIS integrates geospatial analysis with the interactivity of Jupyter Note
 - Process and analyze geospatial data.
 - Share and collaborate on geospatial workflows.
 
-This tool is ideal for researchers, data scientists, and GIS professionals aiming to combine Python’s analytical power with intuitive geospatial visualizations.
+JupyterGIS is designed for researchers, data scientists, and GIS professionals aiming to combine Python’s analytical power with intuitive geospatial visualizations.
+
+
+## Additional resources
+
+- [JupyterGIS Documentation](https://geojupyter.github.io/jupytergis)
+- [Folium Library](https://python-visualization.github.io/folium/latest/)
+- [Geopandas Documentation](https://geopandas.org/en/stable/docs.html)
+- [QGIS Documentation](https://www.qgis.org)
+- [QGIS Tutorials and Tips](https://www.qgistutorials.com/en/index.html)
+
+Happy Mapping!
+
 
