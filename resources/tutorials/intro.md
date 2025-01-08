@@ -162,6 +162,10 @@ To rename it, you can click on **File** in the Jupyter toolbar menu and select *
 ![Rename jGIS project](../images/renamejGIS.png)
 
 
+## Conclusion
+
+Now you’ve learned how to add all the layers you need from various sources and have created a basic map!
+
 ## Additional resources
 
 - [JupyterGIS Documentation](https://geojupyter.github.io/jupytergis)
