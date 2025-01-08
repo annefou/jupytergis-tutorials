@@ -30,12 +30,13 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -374,6 +375,18 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-jupytergis">Introduction to JupyterGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview-of-the-interface">An Overview of the Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-your-first-layers">Adding your first layers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-vector-layer">Add a vector Layer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hiding-and-reordering-layers">Hiding and Reordering Layers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hiding-viewing-layers">Hiding/Viewing Layers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reordering-layers">Reordering Layers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-layers">Renaming Layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-your-jgis-project">Save your JGIS project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
 </ul>
             </nav>
@@ -408,6 +421,132 @@
 <li><p>Share and collaborate on geospatial workflows.</p></li>
 </ul>
 <p>JupyterGIS is designed for researchers, data scientists, and GIS professionals aiming to combine Python’s analytical power with intuitive geospatial visualizations.</p>
+</section>
+<section id="an-overview-of-the-interface">
+<h2>An Overview of the Interface<a class="headerlink" href="#an-overview-of-the-interface" title="Link to this heading">#</a></h2>
+<p>We will explore the JupyterGIS user interface to help you become familiar with its menus, toolbars, map canvas, and layers list, which make up the core structure of the interface.</p>
+<p><strong>The objective of this lesson is to understand the fundamentals of the JupyterGIS user interface.</strong></p>
+<p><img alt="JupyterGIS User Interface explained" src="../_images/jupyterGIS_interface.png" /></p>
+<p>The elements shown in the figure above are:</p>
+<ol class="arabic simple">
+<li><p>The application Launcher helps you to select which application you want to start e.g. a Notebook, a Console, and another application such as a Terminal or open a GIS file (which can be either a JupyterGIS file or a QGIS file).</p></li>
+<li><p>GIS Layers List / Browser Panel</p></li>
+<li><p>Left Sidebar which contains a file browser, a list of tabs in the main work and of running kernels and terminals, the command palette, the table of contents, the extension manager, and the JupyterGIS extension which allows you to see the GIS layers list.</p></li>
+<li><p>The GIS object properties, annotations and filters of a selected GIS layer.</p></li>
+<li><p>The Jupyter toolbar menu which you will use with Jupyter Notebooks.</p></li>
+<li><p>The Log console (which you can you for debugging).</p></li>
+<li><p>Right Sidebar showing the property inspector (active in notebooks), the debugger, and GIS object properties, annotation and filters.</p></li>
+</ol>
+</section>
+<section id="adding-your-first-layers">
+<h2>Adding your first layers<a class="headerlink" href="#adding-your-first-layers" title="Link to this heading">#</a></h2>
+<p>We will start the JupyterGIS application and create a basic map.</p>
+<p><strong>The goal for this lesson: To get started with an example map.</strong></p>
+<div class="tip admonition">
+<p class="admonition-title">Get JupyterGIS</p>
+<p>Before beginning this exercise, JupyterGIS must be installed on your computer (see <a class="reference external" href="https://geojupyter.github.io/jupytergis/install.html">Installation instructions</a>) or you can use an online version of JupyterGIS (such as <a class="reference external" href="https://geojupyter.github.io/jupytergis/lite/lab/index.html?path=france_hiking.jGIS/"><img alt="Jupyterlite badge" src="https://jupyterlite.rtfd.io/en/latest/_static/badge.svg" /></a>).</p>
+</div>
+<p>Launch JupyterGIS from your terminal or start an online version of JupyterGIS depending on what you decided to use for this exercise.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<section id="add-a-vector-layer">
+<h3>Add a vector Layer<a class="headerlink" href="#add-a-vector-layer" title="Link to this heading">#</a></h3>
+<p>Follow along to add a vector layer available online.</p>
+<ol class="arabic simple">
+<li><p>Click on the GIS File Icon in the “Other” section of the Launcher to create a new JGIS Editor. You will have a new, blank map.
+<img alt="JGIS Editor" src="../_images/JGIS_editor.png" /></p></li>
+<li><p>Open Layer Browser (see image below) and select for instance <em>OpenStreetMap.Mapnik</em>. An interactive map will appear and you will be able to zoom in and zoom out with your mouse.
+<img alt="Open Layer Browser" src="../_images/OpenLayerBrowser.png" /></p></li>
+<li><p>Click on the <strong>+</strong> to add another type of layer and select “New Shapefile Layer” to add a new vector layer (stored as a shapefile).
+<img alt="Add a Vector Layer" src="../_images/addVectorLayer.png" /></p></li>
+<li><p>Set the path of the new shapefile Layer to <code class="docutils literal notranslate"><span class="pre">https://www2.census.gov/geo/tiger/GENZ2015/shp/cb_2015_us_county_500k.zip</span></code> and click <strong>Ok</strong>.
+<img alt="Set Shapefile Layer" src="../_images/CreateShapefileLayer.png" /></p></li>
+<li><p>You should then be able to see the new Shapefile Layer on the map and when clicking on the <strong>Custom Shapefile Layer</strong> (see figure below), you should also see the details of the object properties on the right of the map. The map being interactive, you can zoom in and out as you wish to focus on your area of interest (here over the US).
+<img alt="View Shapefile Layer" src="../_images/viewShapefileLayer.png" /></p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Why don’t we add a local shapefile?</p>
+<p>One of the main strength of JupyterGIS is its collaborative capabilities. To be able to collaborate, it is much easier to work with data shared and available online.</p>
+</div>
+<div class="exercise admonition" id="add-vector-layer">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<section id="exercise-content">
+<ul class="simple">
+<li><p>Add a new Shapefile Layer to your map:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">geoserver</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">_downloads</span><span class="o">/</span><span class="mf">30e405</span><span class="n">b790e068c43354367cb08e71bc</span><span class="o">/</span><span class="n">nyc_roads</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Zoom over New-York (USA) and check if you can see the newly added layer.</p></li>
+<li><p>Let’s customize this new layer by changing the color. In the GIS Layer/Browser Panel, select the top layer (corresponds to the last layer you added) and right click to <strong>Edit Symbology</strong>. Then change the <strong>Stroke Color</strong> to a color of your choice. You can also change the Stroke Width and check the result after pressing *<em>OK</em>.</p></li>
+<li><p>In a similar way, you can edit the symbology of the first Shapefile Layer we added and change the <strong>Fill Color</strong>, <strong>Stroke Color</strong> and <strong>Stroke Width</strong>.</p></li>
+<li><p>Do you still see the roads in New-York? Try to adjust the <strong>Opacity</strong> value (default is 1) to a lower value for this Shapefile Layer. Can you see all your layers now?</p></li>
+</ul>
+</section>
+</div>
+<div class="solution dropdown admonition" id="tutorials/intro-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#add-vector-layer"> Exercise 1</a></p>
+<section id="solution-content">
+<p>After adding the new Shapefile Layer and zooming over New-York, you should have the following map:
+<img alt="View several shapefile Layer on the same map" src="../_images/severalShapefileLayers.png" /></p>
+<p>When you right click to edit the symbology, you should get the following pop-up menu:
+<img alt="Edit symbology" src="../_images/editSymbology.png" /></p>
+<p>And when editing the symbology of the other Shapefile Layer:
+<img alt="Adjust Symbology" src="../_images/adjustSymbology.png" /></p>
+<p>And updating the opacity (for instance to 0.5) of the US county Shapefile Layer, you can get a map that can look like to (depending on the colors and Stroke width you chose!):</p>
+<p><img alt="final map for the intro exercise" src="../_images/finalIntroMap.png" /></p>
+</section>
+</div>
+</section>
+</section>
+<section id="hiding-and-reordering-layers">
+<h2>Hiding and Reordering Layers<a class="headerlink" href="#hiding-and-reordering-layers" title="Link to this heading">#</a></h2>
+<section id="hiding-viewing-layers">
+<h3>Hiding/Viewing Layers<a class="headerlink" href="#hiding-viewing-layers" title="Link to this heading">#</a></h3>
+<p>In the GIS Layers List/Browser Panel, you can select a layer and click the <strong>eye</strong> icon to hide or show the corresponding layer.
+<img alt="Hide a layer" src="../_images/hideLayer.png" /></p>
+</section>
+<section id="reordering-layers">
+<h3>Reordering Layers<a class="headerlink" href="#reordering-layers" title="Link to this heading">#</a></h3>
+<p>The layers in your Layers List are displayed on the map according to their order in the list. The bottom layer is drawn first, while the top layer is drawn last. You can adjust their drawing order by rearranging the layers in the list.</p>
+<p>The order in which the layers have been loaded into the map is probably not logical at this stage. It’s possible that the road layer or/and the country layer are completely hidden because other layers are on top of it.</p>
+<p>For example, this layer order:
+<img alt="Wrong layer order" src="../_images/wrongLayerOrder.png" /></p>
+<p>would hide all the custom shapefile layers.</p>
+<p>To solve this problem, you can click and drag on a layer in the Layers list to move it up or down, and reordering the layers as you wish them to be viewed on the map.</p>
+</section>
+</section>
+<section id="renaming-layers">
+<h2>Renaming Layers<a class="headerlink" href="#renaming-layers" title="Link to this heading">#</a></h2>
+<p>As shown on the previous image, the two custom shapefile layers we added have the same name in the GIS Layers List / Browser Panel which can be very confusing.
+It is a good practice to rename your layers with meaningful names. To rename a layer, select it in the  GIS Layers List / Browser Panel, and right click to <strong>Rename Layer</strong>.</p>
+<div class="exercise admonition" id="Rename-layer">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<section id="exercise-content">
+<ul class="simple">
+<li><p>Rename each <strong>Custom Shapefile Layer</strong> with a meaningful name e.g., <strong>cb_2015_us_county_500k</strong> for the US County Shapefile Layer and <strong>nyc_roads</strong> for the roads in New-York.</p></li>
+</ul>
+</section>
+</div>
+<div class="solution dropdown admonition" id="tutorials/intro-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#Rename-layer"> Exercise 2</a></p>
+<section id="solution-content">
+<p><img alt="Map with renamed layers" src="../_images/renameLayer.png" /></p>
+</section>
+</div>
+</section>
+<section id="save-your-jgis-project">
+<h2>Save your JGIS project<a class="headerlink" href="#save-your-jgis-project" title="Link to this heading">#</a></h2>
+<p>Your jGIS file corresponds to your GIS project (similar to <code class="docutils literal notranslate"><span class="pre">.qgz´</span> <span class="pre">for</span> <span class="pre">QGIS)</span> <span class="pre">and</span> <span class="pre">you</span> <span class="pre">probably</span> <span class="pre">already</span> <span class="pre">noticed</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">default</span> <span class="pre">name</span> <span class="pre">is</span> </code>untitled.jGIS<code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">If</span> <span class="pre">you</span> <span class="pre">creater</span> <span class="pre">several</span> <span class="pre">jGIS</span> <span class="pre">files</span> <span class="pre">without</span> <span class="pre">renaming</span> <span class="pre">them,</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">added</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">extension</span> <span class="pre">e.g.</span> </code>untitled1.jGIS<code class="docutils literal notranslate"><span class="pre">,</span> </code>untitled2.jGIS`, etc.</p>
+<p>It is important to give meaningful name to your jGIS project.</p>
+<p>To rename it, you can click on <strong>File</strong> in the Jupyter toolbar menu and select <strong>Rename JGIS…</strong> to give a new name to your jGIS project.</p>
+<p><img alt="Rename jGIS project" src="../_images/renamejGIS.png" /></p>
 </section>
 <section id="additional-resources">
 <h2>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
@@ -489,6 +628,18 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-jupytergis">Introduction to JupyterGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview-of-the-interface">An Overview of the Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-your-first-layers">Adding your first layers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-vector-layer">Add a vector Layer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hiding-and-reordering-layers">Hiding and Reordering Layers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hiding-viewing-layers">Hiding/Viewing Layers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reordering-layers">Reordering Layers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-layers">Renaming Layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-your-jgis-project">Save your JGIS project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
 </ul>
   </nav></div>
